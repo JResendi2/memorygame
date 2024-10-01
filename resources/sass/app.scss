@@ -1,0 +1,17 @@
+// Variables
+@import 'variables';
+
+// Bootstrap
+@import 'bootstrap/scss/bootstrap';
+
+.font-spicy{
+    font-family: $font-primary;
+}
+
+.btn{
+    font-family: $font-secondary;
+}
+
+.h1, .h2, .h3, .h4, .h5{
+    font-family: $font-secondary;
+}

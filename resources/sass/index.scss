@@ -1,0 +1,37 @@
+tr th{
+    border-right: solid 2px #33A494;
+} 
+
+tr th:last-child {
+    border-right: none;
+}
+
+tr td{
+    border-top: solid 2px #33A494;
+    border-right: solid 2px #33A494;
+} 
+
+tr td:last-child{
+    border-right: none;
+} 
+
+.td-svg svg{
+    height: 100%; /* Ocupa el 100% de la altura del contenedor */
+    width: auto;  /* Mantiene la proporción del ancho automáticamente */
+    max-width: 2rem;
+}
+
+.btn-delete-card svg{
+    transition: scale 0.2s ease;
+}
+.btn-delete-card:hover svg{
+    scale: 1.2;
+}
+
+.btn-edit-card svg{
+    transition: scale 0.2s ease;
+}
+.btn-edit-card:hover svg{
+    scale: 1.2;
+}
+

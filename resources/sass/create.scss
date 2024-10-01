@@ -1,0 +1,15 @@
+// Variables
+@import 'variables';
+
+// Bootstrap
+@import 'bootstrap/scss/bootstrap';
+
+textarea, input{
+    border: solid #33A494 2px !important;
+    font-family: 'Roboto', 'Courier New', Courier, monospace !important;
+}
+
+.container-preview-svg{
+    border: solid 2px #33A494;
+    border-radius: 6px;
+}
