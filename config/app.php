@@ -55,9 +55,9 @@ return [
     |
     */
 
-    'url' => env('APP_URL', 'http://localhost'),
+    'url' => env('APP_URL', 'https://memorygame.reediz.com/'),
 
-    'asset_url' => env('ASSET_URL'),
+    'asset_url' => env('ASSET_URL', 'https://memorygame.reediz.com/public/'),
 
     /*
     |--------------------------------------------------------------------------
@@ -122,7 +122,7 @@ return [
     |
     */
 
-    'key' => env('APP_KEY'),
+    'key' => env('APP_KEY', 'base64:+Y6pryTKhpsrsY9+UEuY8mHI4esOw0tlH7lurzmUOsc='),
 
     'cipher' => 'AES-256-CBC',
 
