@@ -15,14 +15,14 @@ class CardController extends Controller
     {
         $query = Card::all();
 
-        $cards = array_fill(0, 36, null);
-        $positionsWithNull = array_fill(0, 36, null);
+        $cards = array_fill(0, 64, null);
+        $positionsWithNull = array_fill(0, 64, null);
         $positionsWithValue = [];
 
         $total = 0;
         $i = 0;
 
-        while ($total < 18) {
+        while ($total < 25) {
             $randomCard = $query->random();
             $query = $query->reject(function ($card) use ($randomCard) {
                 return $card->id === $randomCard->id; // Eliminar la card seleccionada
@@ -50,29 +50,29 @@ class CardController extends Controller
             $total++;
         }
 
-        // while ($total < 32) {
-        //     $randomPositionWithValue = array_rand($positionsWithValue); // Tomar un indice aleatorio para leer un carta que ya se almaceno
+        while ($total < 32) {
+            $randomPositionWithValue = array_rand($positionsWithValue); // Tomar un indice aleatorio para leer un carta que ya se almaceno
 
-        //     $randomPosition = array_rand($positionsWithNull); // Tomar un indice aleatorio para almacenar la carta
-        //     unset($positionsWithNull[$randomPosition]);
-        //     $cards[$randomPosition] = [
-        //         'id' => $i,
-        //         'num' => $cards[$positionsWithValue[$randomPositionWithValue]]['num'],
-        //         'svg' => $cards[$positionsWithValue[$randomPositionWithValue]]['svg']
-        //     ];
-        //     $i++;
+            $randomPosition = array_rand($positionsWithNull); // Tomar un indice aleatorio para almacenar la carta
+            unset($positionsWithNull[$randomPosition]);
+            $cards[$randomPosition] = [
+                'id' => $i,
+                'num' => $cards[$positionsWithValue[$randomPositionWithValue]]['num'],
+                'svg' => $cards[$positionsWithValue[$randomPositionWithValue]]['svg']
+            ];
+            $i++;
 
-        //     $randomPosition = array_rand($positionsWithNull); // Tomar un indice aleatorio para almacenar la pareja de la carta anterior
-        //     unset($positionsWithNull[$randomPosition]);
-        //     $cards[$randomPosition] = [
-        //         'id' => $i,
-        //         'num' => $cards[$positionsWithValue[$randomPositionWithValue]]['num'],
-        //         'svg' => $cards[$positionsWithValue[$randomPositionWithValue]]['svg']
-        //     ];
+             $randomPosition = array_rand($positionsWithNull); // Tomar un indice aleatorio para almacenar la pareja de la carta anterior
+            unset($positionsWithNull[$randomPosition]);
+            $cards[$randomPosition] = [
+                'id' => $i,
+                'num' => $cards[$positionsWithValue[$randomPositionWithValue]]['num'],
+                'svg' => $cards[$positionsWithValue[$randomPositionWithValue]]['svg']
+            ];
 
-        //     $i++;
-        //     $total++;
-        // }
+            $i++;
+            $total++;
+        }
 
         return view('game', compact('cards', 'total'));
     }

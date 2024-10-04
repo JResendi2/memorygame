@@ -68,22 +68,22 @@
                 </form>
             </div>
             <div class="modal-footer flex-nowrap">
-                <button id="btn-delete-card" type="button" class="btn btn-success w-50 d-flex align-items-center justify-content-center gap-2">
+                <a href="{{route('games.index')}}"  id="btn-delete-card" type="button" class="btn btn-success w-50 d-flex align-items-center justify-content-center gap-2">
                     <svg width="24" height="24" viewBox="0 0 12 10" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M2.99997 10L3.85524 6.30263L0.986816 3.81579L4.77629 3.48684L6.24997 0L7.72366 3.48684L11.5131 3.81579L8.64471 6.30263L9.49997 10L6.24997 8.03947L2.99997 10Z" fill="white" />
                     </svg>
                     <span style="padding-top: 0.2rem">
                         Tabla de puntaje
                     </span>
-                </button>
-                <button type="button" class="btn btn-success w-50 d-flex align-items-center justify-content-center gap-2">
+                </a>
+                <a href="{{route('cards.game')}}" class="btn btn-success w-50 d-flex align-items-center justify-content-center gap-2">
                     <svg width="18" height="18" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M6.88123 3.35405L1.38145 0.10262C0.934591 -0.161432 0.250244 0.0948078 0.250244 0.747906V7.2492C0.250244 7.83512 0.886156 8.18823 1.38145 7.89449L6.88123 4.64462C7.37183 4.35557 7.37339 3.6431 6.88123 3.35405Z" fill="white" />
                     </svg>
                     <span style="padding-top: 0.2rem">
                         Volver a jugar
                     </span>
-                </button>
+                </a>
             </div>
         </div>
     </div>
